@@ -1,0 +1,39 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+}
+
+type MoodEntry @table {
+  user: User!
+  moodRating: Int!
+  entryDate: Date!
+  createdAt: Timestamp!
+  feelings: [String]
+  notes: String
+}
+
+type JournalEntry @table {
+  user: User!
+  entryText: String!
+  createdAt: Timestamp!
+  title: String
+}
+
+type MeditationSession @table {
+  title: String!
+  durationMinutes: Int!
+  audioUrl: String!
+  createdAt: Timestamp!
+  description: String
+  category: String
+}
+
+type UserMeditation @table {
+  user: User!
+  meditationSession: MeditationSession!
+  completedAt: Timestamp!
+  userNotes: String
+  isFavorite: Boolean
+}
