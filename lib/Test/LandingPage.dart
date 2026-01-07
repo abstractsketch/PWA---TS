@@ -59,16 +59,6 @@ class LandingPage2 extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   const Text(
-                    'Kleine Änderung',
-                    style: TextStyle(
-                      color: brandGreen,
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      height: 1.2,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  const Text(
                     'Nutze die PWA, um tägliche Gedanken festzuhalten, Fortschritte zu tracken und deine Ziele zu erreichen. Überall verfügbar, ganz ohne Installation.',
                     style: TextStyle(color: secondaryTextColor, fontSize: 16, height: 1.5),
                   ),
