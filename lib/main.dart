@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:projekt_i/Login%202/auth.dart';
 import 'package:projekt_i/Test/Homepage/Homepage3.dart';
 import 'package:projekt_i/Test/LandingPage.dart';
@@ -57,8 +57,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
-*/
 
+/*
 import 'package:flutter/material.dart';
 
 void main() {
@@ -142,4 +142,4 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
-}
+}*/
