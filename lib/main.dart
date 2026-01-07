@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Carlito'),
-      home: Homepage3(),
+      home: LandingPage2(),
 
       //MindInfoPage() alten Login
     );

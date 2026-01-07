@@ -210,9 +210,6 @@ class Homepage3 extends StatelessWidget {
   }
 }
 
-// ============================================================
-// 3. PLATZHALTER FÜR ANDERE SEITEN
-// ============================================================
 class PlaceholderPage extends StatelessWidget {
   final String title;
   const PlaceholderPage({super.key, required this.title});
