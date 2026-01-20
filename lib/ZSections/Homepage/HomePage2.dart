@@ -6,14 +6,14 @@ import 'package:projekt_i/ZSections/Bibliothek/Bibliothek.dart';
 import 'package:projekt_i/ZSections/Layout/Bottomnavbar.dart';
 import 'package:projekt_i/ZSections/Meditationen/Meditationen.dart';
 import 'package:projekt_i/ZSections/Meditationen/Meditationen/Meditation1.dart';
-import 'package:projekt_i/ZSections/Einstellungen/Settingspage.dart';
+import 'package:projekt_i/ZZaware/7%20Einstellungen/Settingspage.dart';
 import 'package:projekt_i/ZSections/Layout/StartPage.dart';
 import 'package:projekt_i/ZSections/Layout/responsive.dart';
 import 'package:projekt_i/ZSections/Layout/top_app_bar.dart';
 import 'package:projekt_i/ZSections/Notizen/Journalpage.dart';
 import 'package:projekt_i/ZSections/Notizen/notizenwidget.dart';
 import '../Layout/drawers.dart';
-import '../../Login 2/auth.dart';
+import '../../ZZaware/1 Login-Page/LandingPageR/auth.dart';
 
 /*class Homepage2 extends StatefulWidget {
   static const String route = '/';

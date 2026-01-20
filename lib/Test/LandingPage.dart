@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projekt_i/Test/Homepage/Test.dart';
+import 'package:projekt_i/ZZaware/1%20Login-Page/AuthScreen.dart';
 
 class LandingPage2 extends StatelessWidget {
   const LandingPage2({super.key});

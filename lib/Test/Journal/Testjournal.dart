@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:projekt_i/Test/Homepage/Test.dart';
+import 'package:projekt_i/ZZaware/1%20Login-Page/AuthScreen.dart';
+import 'package:projekt_i/ZZaware/1%20Login-Page/Userscreen.dart';
 
 const Color kBackgroundColor = Colors.white; 
 const Color kPrimaryGreen = Color(0xFF608665);

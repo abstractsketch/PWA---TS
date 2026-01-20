@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
-import 'package:projekt_i/ZSections/Meditationen/Meditationen/BoxBreathing.dart';
+import 'package:projekt_i/ZZaware/6%20Uebungen/Meditationen/BoxBreathing.dart';
 import 'package:projekt_i/ZSections/Meditationen/Meditationen/Meditation1.dart';
 import 'package:projekt_i/ZSections/Meditationen/Meditationen/Meditation2.dart';
 import 'package:flutter/material.dart';
-import 'package:projekt_i/ZSections/Meditationen/Meditationen/BoxBreathing.dart';
+import 'package:projekt_i/ZZaware/6%20Uebungen/Meditationen/BoxBreathing.dart';
 import 'package:projekt_i/ZSections/Meditationen/Meditationen/Meditation1.dart';
 import 'package:projekt_i/ZSections/Meditationen/Meditationen/Meditation2.dart';
 import 'package:projekt_i/ZSections/Meditationen/listitemdata.dart';

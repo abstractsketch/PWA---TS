@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projekt_i/ZSections/Homepage/HomePage2.dart';
 
-import '../../Login 2/auth.dart';
-import '../../Login 2/dialog_auth.dart';
+import '../../ZZaware/1 Login-Page/LandingPageR/auth.dart';
+import '../../ZZaware/1 Login-Page/LandingPageR/dialog_auth.dart';
 
 //UI of TopAppBar
 class TopAppBar extends StatefulWidget {

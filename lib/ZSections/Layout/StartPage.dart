@@ -35,8 +35,9 @@ class _StartPageState extends State<StartPage> {
     return Scaffold(
       backgroundColor: Colors.white, // Sauberer Hintergrund
       body: ListView(
-        padding: const EdgeInsets.only(bottom: 40), // Platz unten
-        children: <Widget>[
+        padding: const EdgeInsets.only(left: 200,bottom: 40), // Platz unten
+        children: 
+        <Widget>[
           
           // 1. Das große Header-Karussell
           ConstrainedBox(

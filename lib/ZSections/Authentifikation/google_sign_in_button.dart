@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:projekt_i/Test/Homepage/MainLayout.dart';
 import 'package:projekt_i/ZSections/Homepage/HomePage2.dart';
-import 'package:projekt_i/Login%202/auth.dart';
+import 'package:projekt_i/ZZaware/1%20Login-Page/LandingPageR/auth.dart';
 import 'package:projekt_i/ZSections/Homepage/HomePage.dart';
+import 'package:projekt_i/ZZaware/2%20Layout-Page/ResponsiveLayout.dart';
+import 'package:projekt_i/main.dart';
 
 class GoogleButton extends StatefulWidget {
   const GoogleButton({super.key});
@@ -15,7 +18,86 @@ class _GoogleButtonState extends State<GoogleButton> {
   
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
+    return Container(
+  width: double.infinity,
+  height: 45,
+  decoration: BoxDecoration(
+    color: AppColors.cardWhite,
+    borderRadius: BorderRadius.circular(10),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.2),
+        offset: const Offset(0, 4),
+        blurRadius: 5,
+      ),
+    ],
+  ),
+  child: ElevatedButton(
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.transparent, 
+      foregroundColor: const Color.fromARGB(255, 0, 0, 0),
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10),
+      ),
+    ),
+    onPressed: () async {
+      setState(() {
+        _isProcessing = true;
+      });
+      await signInwithGoogle().then((result) {
+        print(result);
+        if (result != null) {
+          //navigate to Homepage after login
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ResponsiveLayout(),
+            ),
+          );
+        }
+      }).catchError((error) {
+        print('Registration Error: $error');
+      });
+      setState(() {
+        _isProcessing = false;
+      });
+    },
+    child: _isProcessing
+        ? const SizedBox(
+            height: 20,
+            width: 20,
+            child: CircularProgressIndicator(
+              strokeWidth: 2,
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+            ),
+          )
+        : Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              /*const Image(
+                image: AssetImage('lib/Bilder/googleg.png'),
+                height: 10, // Leicht verkleinert für die 45er Button-Höhe
+              ),*/
+              const Padding(
+                padding: EdgeInsets.only(left: 15),
+                child: Text(
+                  'Weiter mit Google',
+                  style: TextStyle(
+                    fontSize: 16, // Angepasst an die Button-Größe
+                    fontWeight: FontWeight.bold,
+                    color: Color.fromARGB(255, 0, 0, 0),
+                  ),
+                ),
+              ),
+            ],
+          ),
+  ),
+);
+  }
+}
+
+/*DecoratedBox(
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
           borderRadius:BorderRadius.circular(20),
@@ -25,10 +107,9 @@ class _GoogleButtonState extends State<GoogleButton> {
       ),
       child: OutlinedButton(
         style: OutlinedButton.styleFrom(
-          foregroundColor: Colors.red.shade100,
+          foregroundColor: const Color.fromARGB(255, 0, 0, 0),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
-            side: BorderSide(color: Colors.red.shade100, width: 3),
           ),
           elevation: 0,
         ),
@@ -40,12 +121,12 @@ class _GoogleButtonState extends State<GoogleButton> {
             print(result);
             if (result != null) {
               //navigate to Homepage after login
-              Navigator.of(context).pushReplacement(
-                MaterialPageRoute(
-                  fullscreenDialog: true,
-                  builder:(context) => Homepage2(),
-                ),
-              );
+              Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => ResponsiveLayout(),
+  ),
+);
             }
           }).catchError((error) {
             print('Registration Error: $error');
@@ -57,10 +138,13 @@ class _GoogleButtonState extends State<GoogleButton> {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
           child: _isProcessing
-          ? CircularProgressIndicator(
-            valueColor: new AlwaysStoppedAnimation<Color>(
-              Colors.red,
-            )
+          ? const SizedBox(
+            height: 20,
+            width: 20,
+            child: CircularProgressIndicator(
+              strokeWidth: 2,
+              valueColor: AlwaysStoppedAnimation<Color>(AppColors.orangeEnd),
+            ),
           )
           :Row(
             mainAxisSize: MainAxisSize.min,
@@ -76,7 +160,7 @@ class _GoogleButtonState extends State<GoogleButton> {
                   'Continue with Google',
                   style: TextStyle(
                     fontSize: 20,
-                    color: Colors.teal,
+                    color: AppColors.text,
                   ),
                 ),
               ),
@@ -84,6 +168,4 @@ class _GoogleButtonState extends State<GoogleButton> {
           ),
         ),
       ),
-    );
-  }
-}
+    );*/ 

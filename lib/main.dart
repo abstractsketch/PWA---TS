@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:projekt_i/Login%202/auth.dart';
-import 'package:projekt_i/Test/Homepage/Homepage3.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:projekt_i/ZZaware/1%20Login-Page/LandingPageR/auth.dart';
+import 'package:projekt_i/ZZaware/1%20Login-Page/AuthScreen.dart';
+import 'package:projekt_i/ZZaware/5%20Journal/Moodchart.dart';
+import 'package:projekt_i/Test/Homepage/MainLayout.dart';
 import 'package:projekt_i/Test/LandingPage.dart';
 import 'package:projekt_i/ZSections/Authentifikation/firebaseoptions.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'dart:math';
+import 'dart:ui';
+
+import 'package:projekt_i/ZSections/Layout/infopage.dart';
+import 'package:projekt_i/ZZaware/1%20Login-Page/LandingPageR/LandingPage3D.dart';
+import 'package:projekt_i/ZZaware/2%20Layout-Page/ResponsiveLayout.dart';
+
+import 'ZZaware/1 Login-Page/LandingPage3.dart';
 
 void main() async {
 
@@ -50,96 +61,21 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: 'Carlito'),
-      home: LandingPage2(),
-
-      //MindInfoPage() alten Login
-    );
-  }
-}
-
-/*
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MeinWebAuftritt());
-}
-
-class MeinWebAuftritt extends StatelessWidget {
-  const MeinWebAuftritt({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Statische Flutter Seite',
       theme: ThemeData(
-        useMaterial3: true,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        textTheme: GoogleFonts.robotoTextTheme(),
       ),
-      home: const HomePage(),
+      home: AuthScreen(),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Meine Webseite'),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        actions: [
-          TextButton(onPressed: () {}, child: const Text('Home')),
-          TextButton(onPressed: () {}, child: const Text('Über uns')),
-          TextButton(onPressed: () {}, child: const Text('Kontakt')),
-        ],
-      ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            children: [
-              const SizedBox(height: 50),
-              const Icon(Icons.rocket_launch, size: 80, color: Colors.blue),
-              const SizedBox(height: 20),
-              const Text(
-                'Willkommen auf meiner Flutter-Seite!',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-              const Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Text(
-                  'Dies ist ein Beispiel für eine einfache, statische Webseite, '
-                  'die komplett in Dart geschrieben wurde.',
-                  style: TextStyle(fontSize: 18),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              const SizedBox(height: 30),
-              ElevatedButton.icon(
-                onPressed: () {
-                  // Hier könnte eine Aktion stehen
-                },
-                icon: const Icon(Icons.info),
-                label: const Text('Mehr erfahren'),
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                ),
-              ),
-              const SizedBox(height: 50),
-              Container(
-                height: 200,
-                width: double.infinity,
-                color: Colors.grey[200],
-                child: const Center(child: Text('Footer Bereich © 2026')),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}*/
+class AppColors {
+  static const Color tealPrimary = Color(0xFF28869E); 
+  static const Color tealDark = Color(0xFF1B5E6F); 
+  static const Color orangeStart = Color(0xFFFF9966);
+  static const Color orangeEnd = Color(0xFFFF5E62);
+  static const Color bgLight = Color(0xFFF0F4F6);
+  static const Color cardWhite = Colors.white;
+  static const Color text = Colors.black;
+  static const Color greyText = Color(0xFF888888);
+}

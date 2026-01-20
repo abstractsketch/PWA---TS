@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projekt_i/ZSections/Meditationen/Meditationen.dart';
-import 'package:projekt_i/ZSections/Meditationen/Meditationen/BoxBreathing.dart';
+import 'package:projekt_i/ZZaware/6%20Uebungen/Meditationen/BoxBreathing.dart';
 
 class Meditation2 extends StatefulWidget {
   const Meditation2({super.key});

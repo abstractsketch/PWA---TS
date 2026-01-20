@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projekt_i/ZSections/Bibliothek/Bibliothek.dart';
 import 'package:projekt_i/ZSections/Layout/Bottomnavbar.dart';
 import 'package:projekt_i/ZSections/Meditationen/Meditationen.dart';
-import 'package:projekt_i/ZSections/Einstellungen/Settingspage.dart';
+import 'package:projekt_i/ZZaware/7%20Einstellungen/Settingspage.dart';
 import 'package:projekt_i/ZSections/Layout/StartPage.dart';
 import 'package:projekt_i/ZSections/Layout/drawers.dart';
 import 'package:projekt_i/ZSections/Notizen/Journalpage.dart';

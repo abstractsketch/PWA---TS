@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projekt_i/ZSections/Homepage/HomePage2.dart';
-import 'package:projekt_i/Login%202/auth.dart';
-import 'package:projekt_i/Login%202/dialog_auth.dart';
+import 'package:projekt_i/ZZaware/1%20Login-Page/LandingPageR/auth.dart';
+import 'package:projekt_i/ZZaware/1%20Login-Page/LandingPageR/dialog_auth.dart';
 import 'package:projekt_i/ZSections/Homepage/HomePage.dart';
 
 class Drawers extends StatefulWidget {
