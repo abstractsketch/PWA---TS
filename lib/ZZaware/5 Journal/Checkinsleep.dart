@@ -139,7 +139,7 @@ class _MindfulnessCheckInState extends State<MindfulnessCheckIn> {
         }
       },
       child:Scaffold(
-      backgroundColor: Colors.white, // Oder dein Background-Color
+      backgroundColor: AppColors.bgLight, // Oder dein Background-Color
       appBar: AppBar(
         title: const Text(
           'Tages-Reflektion',

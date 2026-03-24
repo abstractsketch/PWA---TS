@@ -377,7 +377,7 @@ class _Journalpage2State extends State<Journalpage2> {
                                 color: AppColors.tealDark,
                                 shape: BoxShape.circle
                               ),
-                              child: const Icon(Icons.waves, color: AppColors.orangeStart, size: 20),
+                              child: const Icon(Icons.waves, color: AppColors.cardWhite, size: 20),
                             )
                           ],
                         ),

@@ -35,7 +35,6 @@ class _GoogleButtonState extends State<GoogleButton> {
   child: ElevatedButton(
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.transparent, 
-      foregroundColor: const Color.fromARGB(255, 0, 0, 0),
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),

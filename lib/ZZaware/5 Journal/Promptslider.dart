@@ -205,7 +205,7 @@ class JournalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 280, 
+      width: 280,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(24),
@@ -223,28 +223,29 @@ class JournalCard extends StatelessWidget {
           onTap: onTap,
           borderRadius: BorderRadius.circular(24),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            // WICHTIG: Hier von .start auf .stretch ändern!
+            crossAxisAlignment: CrossAxisAlignment.stretch, 
             children: [
               Expanded(
-                flex: 6, 
+                flex: 6,
                 child: Container(
                   padding: const EdgeInsets.all(20),
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
-                      // Hier nutzen wir AppColors für den Verlauf
                       colors: [
-                        AppColors.tealPrimary, // Helleres Teal oben links
-                        AppColors.tealDark,    // Dunkles Teal unten rechts
+                        AppColors.tealPrimary,
+                        AppColors.tealDark,
                       ],
                     ),
                   ),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
+                    // Hier können Sie .start oder .end lassen, je nach Textwunsch
+                    crossAxisAlignment: CrossAxisAlignment.start, 
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      // Haupttitel (Weiß)
+                      // Titel
                       Text(
                         title,
                         maxLines: 4,
@@ -262,11 +263,12 @@ class JournalCard extends StatelessWidget {
               ),
 
               Expanded(
-                flex: 4, 
+                flex: 4,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20, right: 20, top: 15, bottom: 40),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    // Auch hier .stretch oder .start, Text ist aber meist linksbündig
+                    crossAxisAlignment: CrossAxisAlignment.start, 
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       _buildTag(tag),
@@ -274,7 +276,7 @@ class JournalCard extends StatelessWidget {
                         description,
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
+                        style: const TextStyle( // const hinzugefügt für Performance
                           color: AppColors.text,
                           fontSize: 14,
                           height: 1.4,

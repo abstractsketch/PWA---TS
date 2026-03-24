@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:projekt_i/ZZaware/6%20Uebungen/478atem.dart';
+import 'package:projekt_i/ZZaware/6%20Uebungen/BOFInfo.dart';
+import 'package:projekt_i/ZZaware/6%20Uebungen/BreathofFire.dart';
+import 'package:projekt_i/ZZaware/6%20Uebungen/Klangkulissen/Wasserfall.dart';
+import 'package:projekt_i/ZZaware/6%20Uebungen/Meditationen/InfoPageWHA.dart';
 import 'package:projekt_i/ZZaware/6%20Uebungen/Meditationen/MeditationenPage.dart';
 import 'package:projekt_i/ZZaware/6%20Uebungen/Meditationen/BoxBreathing.dart';
 import 'package:projekt_i/ZZaware/6%20Uebungen/WImHoff.dart';
@@ -30,7 +34,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'Atemtechnik zur Erhöhung des Sauerstoffgehalt',
       'time': '5 min.',
       'tag': 'Atem',
-      'targetPage': WimHoffBreathwork(),
+      'targetPage': InfoWHA(),
       'image': 'https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?q=80&w=800&auto=format&fit=crop' 
     },
     {
@@ -38,7 +42,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': '',
       'time': '∞ min.',
       'tag': 'Atem',
-      'targetPage': WimHoffBreathwork(),
+      'targetPage': Atemeins(),
       'image': 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop' // Zen Steine/Ruhe
     },
     {
@@ -46,7 +50,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'Sofortige Hilfe',
       'time': '3 min.',
       'tag': 'Atem',
-      'targetPage': WimHoffBreathwork(),
+      'targetPage': BofInfo(),
       'image': 'https://images.unsplash.com/photo-1528319725582-ddc096101511?q=80&w=800&auto=format&fit=crop' // Sanfte Blätter
     },
     {
@@ -106,7 +110,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'Erdung nahc einem langen Tag',
       'time': '7 min.',
       'tag': 'Klang',
-      'targetPage': MeditationPage(nummer: 2, titel: 'Grounding Meditation'),
+      'targetPage': MeditationPage(nummer: 1, titel: 'Body Scan'),
       'image': 'https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=800&auto=format&fit=crop' // Regen am Fenster / Gemütlich
     },
     {
@@ -114,7 +118,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'Ein Raum um sich in Ruhe zu entspannen',
       'time': '9 min.',
       'tag': 'Meditation',
-      'targetPage': MeditationPage(nummer: 3, titel: 'Sicherheit'),
+      'targetPage': MeditationPage(nummer: 1, titel: 'Body Scan'),
       'image': 'https://images.unsplash.com/photo-1552196563-55cd4e45efb3?q=80&w=800&auto=format&fit=crop' // Yoga Pose / Indoor
     },
     {
@@ -122,7 +126,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'In dem Moment sein',
       'time': '7 min.',
       'tag': 'Atem',
-      'targetPage': MeditationPage(nummer: 4, titel: 'Achtsamkeit'),
+      'targetPage': MeditationPage(nummer: 1, titel: 'Body Scan'),
       'image': 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=800&auto=format&fit=crop' // Sanftes Licht / Tisch
     },
     {
@@ -130,7 +134,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'Einfach sein',
       'time': '20 min.',
       'tag': 'Meditation',
-      'targetPage': MeditationPage(nummer: 5, titel: 'Stille'),
+      'targetPage': MeditationPage(nummer: 1, titel: 'Body Scan'),
       'image': 'https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=800&auto=format&fit=crop' // Tiefer Wald / Dunkelgrün
     },
   ];
@@ -142,15 +146,15 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'Wind und Natur',
       'time': '∞',
       'tag': 'Natur',
-      'targetPage': const Meditationdank(),
-      'image': 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop' // Sonnenstrahlen im Wald
+      'targetPage': const Wasserfall(),
+      'image': 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=800&auto=format&fit=crop', // Sonnenstrahlen im Wald
     },
     {
       'title': 'Regengeräusche',
       'desc': 'Beruhigender Regen',
       'time': '∞',
       'tag': 'Klang',
-      'targetPage': const Meditationdank(),
+      'targetPage': MeditationPage(nummer: 1, titel: 'Body Scan'),
       'image': 'https://images.unsplash.com/photo-1493314894560-5c412a56c17c?q=80&w=800&auto=format&fit=crop' // Dunkle, gemütliche Regentropfen
     },
     {
@@ -158,7 +162,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'Frühlingserwachen',
       'time': '∞',
       'tag': 'Natur',
-      'targetPage': const Meditationdank(),
+      'targetPage': MeditationPage(nummer: 1, titel: 'Body Scan'),
       'image': 'https://images.unsplash.com/photo-1452570053594-1b985d6ea890?q=80&w=800&auto=format&fit=crop' // Vogel auf Ast / Blau-Grün
     },
     {
@@ -166,7 +170,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'Fokus & Klarheit',
       'time': '∞',
       'tag': 'Fokus',
-      'targetPage': const Meditationdank(),
+      'targetPage': MeditationPage(nummer: 1, titel: 'Body Scan'),
       'image': 'https://images.unsplash.com/photo-1529651737248-dad5e287768e?q=80&w=800&auto=format&fit=crop' // Abstrakt Hell / Nebel / Luftig
     },
     {
@@ -174,7 +178,7 @@ final List<Map<String, dynamic>> breathworkdata = [
       'desc': 'Tiefe Entspannung',
       'time': '∞',
       'tag': 'Schlaf',
-      'targetPage': const Meditationdank(),
+      'targetPage': MeditationPage(nummer: 1, titel: 'Body Scan'),
       'image': 'https://images.unsplash.com/photo-1464695110811-dcf3903dc2f4?q=80&w=800&auto=format&fit=crop' // Dunkles Wasser / Tiefe / Erdig
     },
   ];

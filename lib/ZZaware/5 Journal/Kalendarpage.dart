@@ -26,7 +26,7 @@ class _CalendarPageState extends State<CalendarPage> {
       List<String> parts = dateString.split('.');
       return DateTime(int.parse(parts[2]), int.parse(parts[1]), int.parse(parts[0]));
     } catch (e) {
-      return DateTime(1970); // Fallback
+      return DateTime(2025); 
     }
   }
 
@@ -302,7 +302,6 @@ class _CalendarPageState extends State<CalendarPage> {
                                 return dateB.compareTo(dateA); // Absteigend
                               });
 
-                              // 4. Liste bauen
                               return ListView.builder(
                                 physics: const BouncingScrollPhysics(),
                                 itemCount: sortedKeys.length,
@@ -310,13 +309,36 @@ class _CalendarPageState extends State<CalendarPage> {
                                   String dateKey = sortedKeys[index];
                                   List<Map<String, dynamic>> entriesForDay = groupedData[dateKey]!;
 
-                                  // Innerhalb des Tages sortieren: Journal zuerst, dann Dankbarkeit
+                                  // --- HIER IST DIE NEUE SORTIERLOGIK ---
                                   entriesForDay.sort((a, b) {
-                                    String typeA = a['type'];
-                                    String typeB = b['type'];
-                                    if (typeA == 'journal' && typeB == 'gratitude') return -1;
-                                    if (typeA == 'gratitude' && typeB == 'journal') return 1;
-                                    return 0; // Wenn gleicher Typ
+                                    // 1. Priorität festlegen (Niedrigere Zahl = Höhere Wichtigkeit)
+                                    int getPriority(String type) {
+                                      switch (type) {
+                                        case 'journal': return 0;   // Zuerst
+                                        case 'gratitude': return 1; // Dann Dankbarkeit
+                                        default: return 2;          // Dann alles andere
+                                      }
+                                    }
+
+                                    int priorityA = getPriority(a['type']);
+                                    int priorityB = getPriority(b['type']);
+
+                                    // 2. Vergleich der Typen
+                                    if (priorityA != priorityB) {
+                                      return priorityA.compareTo(priorityB);
+                                    }
+
+                                    // 3. Falls Typ gleich ist: Nach Zeit sortieren (Neueste zuerst)
+                                    // Wir nutzen 'saved_at', da das Feld in deinen Queries vorkommt
+                                    try {
+                                      var timeA = a['saved_at'];
+                                      var timeB = b['saved_at'];
+                                      // Firestore Timestamps haben eine compareTo Methode
+                                      // b.compareTo(a) sorgt für absteigende Sortierung (neueste oben)
+                                      return timeB.compareTo(timeA);
+                                    } catch (e) {
+                                      return 0; // Fallback, falls kein Timestamp vorhanden
+                                    }
                                   });
 
                                   return Column(
@@ -328,7 +350,7 @@ class _CalendarPageState extends State<CalendarPage> {
                                         child: Row(
                                           children: [
                                             Text(
-                                              dateKey, // z.B. 18.1.2026
+                                              dateKey,
                                               style: const TextStyle(
                                                 color: AppColors.tealDark,
                                                 fontWeight: FontWeight.bold,
@@ -350,6 +372,7 @@ class _CalendarPageState extends State<CalendarPage> {
                                   );
                                 },
                               );
+
                             },
                           );
                         },

@@ -434,7 +434,7 @@ class _HomepageDState extends State<HomepageD> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => MindfulnessCheckIn()),
+                  MaterialPageRoute(builder: (context) => /*MindfulnessCheckIn()*/ Journalentrypage()),
                 );
               },
               child: Container(

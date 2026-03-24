@@ -49,7 +49,7 @@ class LandingPage2 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    'Dein digitaler Begleiter für\nmentale Klarheit.',
+                    'Deine Veränderung.',
                     style: TextStyle(
                       color: brandGreen,
                       fontSize: 32,
