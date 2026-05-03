@@ -14,19 +14,18 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <script src="flutter_bootstrap.js" async></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker
-        .register('/firebase-messaging-sw.js')
-        .then(function(reg) {
-          console.log('[SW] Registriert:', reg.scope);
-        })
-        .catch(function(err) {
-          console.error('[SW] Fehler:', err);
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/projekt_i/firebase-messaging-sw.js')
+        .then(function(registration) {
+          console.log('[Custom SW] Erfolgreich registriert mit Scope:', registration.scope);
+        }).catch(function(err) {
+          console.error('[Custom SW] Registrierung fehlgeschlagen:', err);
         });
+      });
     }
   </script>
-
-  <script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
