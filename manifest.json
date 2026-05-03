@@ -1,11 +1,11 @@
 {
-    "name": "projekt_i",
-    "short_name": "projekt_i",
+    "name": "aware.",
+    "short_name": "aware.",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#28869E",
+    "theme_color": "#28869E",
+    "description": "App for mindfulness and stress regulation",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
