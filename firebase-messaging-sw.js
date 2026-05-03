@@ -1,5 +1,3 @@
-
-// Minimaler Test-SW
 console.log('[SW] Geladen!');
 
 importScripts('https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js');
@@ -14,7 +12,11 @@ firebase.initializeApp({
     appId: "1:584129027887:web:5bdad06a3cd3ccac8ecbda",
 });
 
-firebase.messaging();
+const messaging = firebase.messaging();
+
+messaging.onBackgroundMessage(function(payload) {
+  console.log('[SW] Hintergrund-Nachricht empfangen: ', payload);
+});
 
 self.addEventListener('install', () => {
   console.log('[SW] Installiert');
