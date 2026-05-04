@@ -1,5 +1,3 @@
-console.log('[SW] Geladen!');
-
 importScripts('https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/10.12.0/firebase-messaging-compat.js');
 
@@ -13,16 +11,3 @@ firebase.initializeApp({
 });
 
 const messaging = firebase.messaging();
-
-messaging.onBackgroundMessage(function(payload) {
-  console.log('[SW] Hintergrund-Nachricht empfangen: ', payload);
-});
-
-self.addEventListener('install', () => {
-  console.log('[SW] Installiert');
-  self.skipWaiting();
-});
-
-self.addEventListener('activate', () => {
-  console.log('[SW] Aktiviert');
-});
